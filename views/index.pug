@@ -1,0 +1,38 @@
+doctype html
+html(lang='fr')
+    head
+        title Chat Room
+        link(rel='stylesheet', href='/css/style.css')
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    body
+        header
+            nav(id="welcome")
+                h1 Chat room avec Socket.io
+        div.container
+            aside.rooms 
+                div
+                    p liste des channels :
+                    ul
+                        li(class='room') Général
+                        li(class='room') Graphisme
+                        li(class='room') Développement
+            main
+                div                    
+                    ul(id="listeMsg")
+                div
+                    p(id="isTyping")
+                    form(id="myForm")
+                          
+                        input(type="text", name="message", placeholder="Tapez votre message ici" id="input")                        
+                        button(type="submit") Envoyer
+                        p.emoji 😀 
+            aside.users
+                div
+                    p utilisateurs connectés
+                    ul(id="userList")
+        script(src="/socket.io/socket.io.js") 
+        script(src="/scripts/vanillaEmojiPicker.js")
+        script(src='/scripts/app.js' )
+
+            
